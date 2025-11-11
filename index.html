@@ -221,6 +221,13 @@ Danger
   console.log('Lab external script executed — no harm done');
   alert('External script executed (lab)');
   </code></pre>
+     or to inject generated page
+  <pre><code>// malicious.js (lab only)
+  const htmlContent = `PASTE_YOUR_GENERATED_HTML_HERE`;
+  document.open();
+  document.write(htmlContent);
+  document.close();
+  </code></pre>
   
       <hr style="border:none;border-top:1px solid #22364a;margin:10px 0;">
   
@@ -398,5 +405,6 @@ document.getElementById('imageOption').addEventListener('change', function() {
 
 </body>
 </html>
+
 
 
